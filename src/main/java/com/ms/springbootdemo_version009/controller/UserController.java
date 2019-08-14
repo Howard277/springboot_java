@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -58,7 +59,6 @@ public class UserController {
 		listUserName.add("李四");
 		mav.addObject("listUserName",listUserName);
 		mav.addObject("myname", "吴克涛");
-		
 		User user = new User(null, "wuketao@houbank.cn", "吴克涛", SexEnum.MAN, new Date(), "北京");
 		mav.addObject("user", user);
 		
@@ -78,12 +78,7 @@ public class UserController {
 
 	/**
 	 * 保存用户
-	 * 
-	 * @param name
-	 * @param email
-	 * @param sex
-	 * @param birthday
-	 * @param hometown
+	 * @param saveUser
 	 * @return
 	 */
 	@ResponseBody
